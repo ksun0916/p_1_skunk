@@ -1,10 +1,16 @@
 package skunk.domain;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 public class TestDice
 {
+	@Test
+	public void test_dice_is_dice()
+	{
+		fail();
+	}
 	@Test
 	public void test_dice_with_predictable_die_123()
 	{
