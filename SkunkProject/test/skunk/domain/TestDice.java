@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestDice
 {
 	@Test
-	public void test()
+	public void test_dice_range()
 	{
 		fail("Not yet implemented");
 	}
