@@ -16,8 +16,14 @@ public class TestDice
 	@Test
 	public void test_dice_are_two_die()
 	{
-		fail();
+		Die die1 = new Die();
+		Die die2 = new Die();
+		Dice dice = new Dice(die1, die2);
+		assertEquals(die1.getClass(), Die.class);
+		assertEquals(die2.getClass(), Die.class);
+		assertEquals(dice.getClass(), Dice.class);		
 	}
+	
 	@Test
 	public void test_dice_range()
 	{
