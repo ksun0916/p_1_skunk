@@ -6,6 +6,12 @@ import org.junit.Test;
 public class TestDice
 {
 	@Test
+	public void test_dice_with_predictable_die_123()
+	{
+		fail();
+	}
+	
+	@Test
 	public void test_dice_range()
 	{
 		Dice dice = new Dice();
