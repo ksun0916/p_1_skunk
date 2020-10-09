@@ -6,6 +6,12 @@ import org.junit.Test;
 public class TestDie
 {
 	@Test
+	public void test_die_is_die()
+	{
+		fail();
+	}
+	
+	@Test
 	public void test_die_with_predictable_die_123()
 	{
 		PredictableDie die = new PredictableDie(new int[] {1,2,3});
