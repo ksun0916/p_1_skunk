@@ -14,6 +14,11 @@ public class TestDice
 	}
 	
 	@Test
+	public void test_dice_are_two_die()
+	{
+		fail();
+	}
+	@Test
 	public void test_dice_range()
 	{
 		Dice dice = new Dice();
