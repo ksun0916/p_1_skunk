@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestDie
 {
 	@Test
-	public void test()
+	public void test_die_range()
 	{
 		fail("Not yet implemented");
 	}
