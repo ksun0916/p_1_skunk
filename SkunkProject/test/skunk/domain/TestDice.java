@@ -9,12 +9,8 @@ public class TestDice
 	@Test
 	public void test_dice_is_dice()
 	{
-		fail();
-	}
-	@Test
-	public void test_dice_with_predictable_die_123()
-	{
-		fail();
+		Dice dice = new Dice();
+		assertEquals(dice.getClass(), Dice.class);
 	}
 	
 	@Test
