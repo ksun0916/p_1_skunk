@@ -6,6 +6,12 @@ import org.junit.Test;
 public class TestDie
 {
 	@Test
+	public void test_die_with_seed()
+	{
+		fail();
+	}
+	
+	@Test
 	public void test_die_range()
 	{
 		Die die = new Die();
@@ -18,10 +24,4 @@ public class TestDie
 			}
 		}
 	}
-
-	//@Test(expected=RuntimeException.class)
-	//public void test2()
-	//{
-	//	throw new RuntimeException();
-	//}
 }
