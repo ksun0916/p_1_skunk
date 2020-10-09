@@ -8,7 +8,8 @@ public class TestDie
 	@Test
 	public void test_die_is_die()
 	{
-		fail();
+		Die die = new Die();
+		assertEquals(die.getClass(), Die.class);
 	}
 	
 	@Test
