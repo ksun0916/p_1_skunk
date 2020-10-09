@@ -21,7 +21,11 @@ public class TestDie
 	@Test 
 	public void test_die_with_predictable_die_more_than_once() 
 	{
-		fail();
+		PredictableDie die = new PredictableDie(new int[] {1});
+		die.roll();
+		assertEquals(1, die.getLastRoll());
+		die.roll();
+		assertEquals(1, die.getLastRoll());
 	}
 	
 	@Test
