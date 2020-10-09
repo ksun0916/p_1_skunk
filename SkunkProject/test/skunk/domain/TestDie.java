@@ -28,6 +28,13 @@ public class TestDie
 		assertEquals(1, die.getLastRoll());
 	}
 	
+	@Test(expected=RuntimeException.class)
+	public void test_die_with_predictable_die_empty_array()
+	{
+		fail();
+	}
+	
+	
 	@Test
 	public void test_die_range()
 	{
