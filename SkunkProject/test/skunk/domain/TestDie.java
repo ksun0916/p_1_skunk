@@ -18,6 +18,12 @@ public class TestDie
 		assertEquals(3, die.getLastRoll());
 	}
 	
+	@Test 
+	public void test_die_with_predictable_die_more_than_once() 
+	{
+		fail();
+	}
+	
 	@Test
 	public void test_die_range()
 	{
