@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestDie
 {
 	@Test
-	public void test_die_with_predictable_die()
+	public void test_die_with_predictable_die_123()
 	{
 		fail();	
 	}
