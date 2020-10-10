@@ -37,4 +37,10 @@ public class TestDice
 			}
 		}
 	}
+	
+	@Test
+	public void test_dice_to_string()
+	{
+		fail();
+	}
 }
