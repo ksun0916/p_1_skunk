@@ -58,6 +58,11 @@ public class TestDie
 	@Test
 	public void test_die_to_string()
 	{
-		fail();
+		Die die = new Die();
+		for(int i=0;i<10;i++)
+		{
+			assertEquals(die.toString(), "Die: "+die.getLastRoll());
+			die.roll();
+		}
 	}
 }
