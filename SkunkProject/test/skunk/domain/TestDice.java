@@ -41,6 +41,13 @@ public class TestDice
 	@Test
 	public void test_dice_to_string()
 	{
-		fail();
+		Die die1 = new Die();
+		Die die2 = new Die();
+		Dice dice = new Dice(die1, die2);
+		for(int i=0;i<10;i++)
+		{
+			assertEquals(dice.toString(), "Dice with last roll: " + dice.getLastRoll() + " => " + die1.getLastRoll() + " + " + die2.getLastRoll());
+			dice.roll();
+		}
 	}
 }
