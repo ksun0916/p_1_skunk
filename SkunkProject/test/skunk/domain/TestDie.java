@@ -54,4 +54,10 @@ public class TestDie
 			}
 		}
 	}
+	
+	@Test
+	public void test_die_to_string()
+	{
+		fail();
+	}
 }
