@@ -19,5 +19,10 @@ public class TestPlayer {
 		player.setChip(100);
 		assertEquals(player.getChip(), 100);
 	}
+	
+	@Test
+	public void test_adjust_chip() {
+		fail();
+	}
 
 }
