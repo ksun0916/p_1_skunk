@@ -14,7 +14,10 @@ public class TestPlayer {
 	
 	@Test
 	public void test_set_chip() {
-		fail();
+		Player player = new Player();
+		assertEquals(player.getChip(), 50);
+		player.setChip(100);
+		assertEquals(player.getChip(), 100);
 	}
 
 }
