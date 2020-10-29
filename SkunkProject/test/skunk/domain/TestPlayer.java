@@ -22,7 +22,12 @@ public class TestPlayer {
 	
 	@Test
 	public void test_adjust_chip() {
-		fail();
+		Player player = new Player();
+		assertEquals(player.getChip(), 50);
+		player.adjustChip(10);
+		assertEquals(player.getChip(), 60);
+		player.adjustChip(-5);
+		assertEquals(player.getChip(), 55);
 	}
 
 }
