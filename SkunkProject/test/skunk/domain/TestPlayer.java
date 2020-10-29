@@ -52,7 +52,9 @@ public class TestPlayer {
 	
 	@Test
 	public void test_reset_name() {
-		fail();
+		Player player = new Player();
+		assertEquals(player.getName(), "Player");
+		player.setName("ABC");
+		assertEquals(player.getName(), "ABC");
 	}
-
 }
