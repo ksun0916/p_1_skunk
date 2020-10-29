@@ -49,5 +49,10 @@ public class TestPlayer {
 		player.resetPoint();
 		assertEquals(player.getPoint(), 0);
 	}
+	
+	@Test
+	public void test_reset_name() {
+		fail();
+	}
 
 }
