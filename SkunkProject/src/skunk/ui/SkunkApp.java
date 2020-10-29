@@ -1,5 +1,6 @@
-package skunk.domain;
+package skunk.ui;
 import edu.princeton.cs.introcs.*;
+import skunk.domain.Dice;
 
 public class SkunkApp {
 
