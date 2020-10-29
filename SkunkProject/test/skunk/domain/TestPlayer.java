@@ -29,5 +29,10 @@ public class TestPlayer {
 		player.adjustChip(-5);
 		assertEquals(player.getChip(), 55);
 	}
+	
+	@Test
+	public void test_add_point() {
+		fail();
+	}
 
 }
