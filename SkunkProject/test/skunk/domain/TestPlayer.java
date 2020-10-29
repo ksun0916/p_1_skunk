@@ -7,8 +7,9 @@ import org.junit.Test;
 public class TestPlayer {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test_create_new_player() {
+		Player player = new Player();
+		assertEquals(player.getClass(), Player.class);
 	}
 
 }
