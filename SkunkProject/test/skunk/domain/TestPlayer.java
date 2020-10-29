@@ -43,7 +43,11 @@ public class TestPlayer {
 	
 	@Test
 	public void test_reset_point() {
-		fail();
+		Player player = new Player();
+		player.addPoint(13);
+		assertEquals(player.getPoint(), 13);
+		player.resetPoint();
+		assertEquals(player.getPoint(), 0);
 	}
 
 }
