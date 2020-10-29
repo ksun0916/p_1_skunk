@@ -57,4 +57,9 @@ public class TestPlayer {
 		player.setName("ABC");
 		assertEquals(player.getName(), "ABC");
 	}
+	
+	@Test
+	public void test_player_to_string() {
+		fail();
+	}
 }
