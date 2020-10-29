@@ -32,7 +32,13 @@ public class TestPlayer {
 	
 	@Test
 	public void test_add_point() {
-		fail();
+		Player player = new Player();
+		player.addPoint(30);
+		assertEquals(player.getPoint(), 30);
+		player.addPoint(5);
+		assertEquals(player.getPoint(), 35);
+		player.addPoint(11);
+		assertEquals(player.getPoint(), 46);
 	}
 
 }
