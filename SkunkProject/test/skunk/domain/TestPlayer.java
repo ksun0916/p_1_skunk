@@ -60,6 +60,11 @@ public class TestPlayer {
 	
 	@Test
 	public void test_player_to_string() {
-		fail();
+		Player player = new Player();
+		assertEquals(player.toString(), "Player: Player"+"\nCurrent Points: 0"+"\nTotal Chips: 50");
+		player.setName("ABCD");
+		player.setChip(100);
+		player.addPoint(25);
+		assertEquals(player.toString(), "Player: ABCD"+"\nCurrent Points: 25"+"\nTotal Chips: 100");
 	}
 }

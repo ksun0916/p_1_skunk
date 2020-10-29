@@ -55,6 +55,6 @@ public class Player {
 	
 	public String toString() 
 	{
-		return "Player: " + getName() + "\nCurrent Score: " + getPoint() + "\nTotal Chips: "  + getChip();
+		return "Player: " + getName() + "\nCurrent Points: " + getPoint() + "\nTotal Chips: "  + getChip();
 	}
 }
