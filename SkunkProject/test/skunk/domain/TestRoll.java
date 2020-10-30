@@ -12,4 +12,8 @@ public class TestRoll {
 		assertEquals(roll.getClass(), Roll.class);
 	}
 
+	@Test
+	public void test_roll() {
+		fail();
+	}
 }
