@@ -13,8 +13,11 @@ public class TestTurn {
 	}
 	
 	@Test
-	public void test_stop_play() {
-		fail();
+	public void test_stop_play_and_is_over() {
+		Turn turn = new Turn();
+		assertEquals(turn.isOver(), false);
+		turn.stopPlay();
+		assertEquals(turn.isOver(), true);
 	}
 
 }
