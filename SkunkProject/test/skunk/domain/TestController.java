@@ -91,6 +91,13 @@ public class TestController {
 	
 	@Test
 	public void test_print_roll() {
-		fail();
+		Controller controller = new Controller();
+		String s = controller.printRoll();
+		int skunk = controller.getRoll().getSkunk();
+		while(controller.getRoll().getSkunk()==skunk)
+		{
+			controller.playRoll();
+		}
+		assertNotEquals(s, controller.printRoll());
 	}
 }
