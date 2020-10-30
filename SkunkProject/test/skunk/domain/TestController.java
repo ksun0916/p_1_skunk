@@ -64,4 +64,9 @@ public class TestController {
 		controller.getTurn().addPoints(8);
 		assertEquals(controller.getTurnPoint(), 8);
 	}
+	
+	@Test
+	public void test_play_roll() {
+		fail();
+	}
 }
