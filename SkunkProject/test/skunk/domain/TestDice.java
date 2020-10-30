@@ -61,7 +61,10 @@ public class TestDice
 	
 	@Test
 	public void test_get_last_die2() {
-		fail();
+		Die die1 = new Die();
+		Die die2 = new Die();
+		Dice dice = new Dice(die1, die2);
+		assertEquals(dice.getLastDie2(), die2.getLastRoll());
 	}
 	
 }
