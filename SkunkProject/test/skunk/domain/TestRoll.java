@@ -29,4 +29,9 @@ public class TestRoll {
 		Roll roll = new Roll();
 		assertEquals(roll.toString(), roll.getLastDie1()+"+"+roll.getLastDie2());
 	}
+	
+	@Test
+	public void test_get_skunk() {
+		fail();
+	}
 }
