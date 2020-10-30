@@ -46,6 +46,10 @@ public class Controller {
 		getPlayer(number).setName(name);
 	}
 	
+	public Turn getTurn() {
+		return turn;
+	}
+	
 	public void startNewTurn() {
 		turn = new Turn();
 	}
