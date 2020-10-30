@@ -59,4 +59,9 @@ public class TestDice
 		assertEquals(dice.getLastDie1(), die1.getLastRoll());
 	}
 	
+	@Test
+	public void test_get_last_die2() {
+		fail();
+	}
+	
 }
