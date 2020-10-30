@@ -33,6 +33,10 @@ public class TestController {
 	
 	@Test
 	public void test_start_new_turn() {
-		fail();
+		Controller controller = new Controller();
+		controller.getTurn().addPoints(10);
+		Turn oldTurn = controller.getTurn();
+		controller.startNewTurn();
+		assertNotEquals(oldTurn, controller.getTurn());		
 	}
 }
