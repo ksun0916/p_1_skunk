@@ -20,4 +20,8 @@ public class TestTurn {
 		assertEquals(turn.isOver(), true);
 	}
 
+	@Test
+	public void test_add_points() {
+		fail();
+	}
 }
