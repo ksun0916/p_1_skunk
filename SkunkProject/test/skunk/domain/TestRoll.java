@@ -26,6 +26,7 @@ public class TestRoll {
 	
 	@Test
 	public void test_to_string() {
-		fail();
+		Roll roll = new Roll();
+		assertEquals(roll.toString(), roll.getLastDie1()+"+"+roll.getLastDie2());
 	}
 }
