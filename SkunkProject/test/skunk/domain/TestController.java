@@ -13,8 +13,11 @@ public class TestController {
 	}
 	
 	@Test
-	public void test_set_player() {
-		fail();
+	public void test_set_player_number() {
+		Controller controller = new Controller();
+		assertEquals(controller.getPlayerNumber(), 2);
+		controller.setPlayerNumber(3);
+		assertEquals(controller.getPlayerNumber(), 3);
 	}
 
 }
