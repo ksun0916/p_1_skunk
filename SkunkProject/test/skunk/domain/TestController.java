@@ -30,4 +30,9 @@ public class TestController {
 		assertEquals(controller.getPlayerName(0), "AAA");
 		assertEquals(controller.getPlayerName(1), "BBB");
 	}
+	
+	@Test
+	public void test_start_new_turn() {
+		fail();
+	}
 }
