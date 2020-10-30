@@ -11,5 +11,10 @@ public class TestController {
 		Controller controller = new Controller();
 		assertEquals(controller.getClass(), Controller.class);
 	}
+	
+	@Test
+	public void test_set_player() {
+		fail();
+	}
 
 }
