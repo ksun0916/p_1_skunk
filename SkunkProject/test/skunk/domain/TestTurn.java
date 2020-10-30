@@ -32,6 +32,10 @@ public class TestTurn {
 	
 	@Test
 	public void test_reset_points() {
-		fail();
+		Turn turn = new Turn();
+		turn.addPoints(7);
+		assertNotEquals(turn.getPoints(), 0);
+		turn.resetPoints();
+		assertEquals(turn.getPoints(), 0);
 	}
 }
