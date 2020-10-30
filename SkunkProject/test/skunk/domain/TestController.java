@@ -56,4 +56,9 @@ public class TestController {
 		controller.getPlayerAction("n");
 		assertEquals(controller.turnIsOver(), true);
 	}
+	
+	@Test
+	public void test_get_turn_point() {
+		fail();
+	}
 }
