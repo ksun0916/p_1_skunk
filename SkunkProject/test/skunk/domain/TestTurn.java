@@ -11,5 +11,10 @@ public class TestTurn {
 		Turn turn = new Turn();
 		assertEquals(turn.getClass(), Turn.class);
 	}
+	
+	@Test
+	public void test_stop_play() {
+		fail();
+	}
 
 }
