@@ -7,8 +7,9 @@ import org.junit.Test;
 public class TestTurn {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test_create_turn() {
+		Turn turn = new Turn();
+		assertEquals(turn.getClass(), Turn.class);
 	}
 
 }
