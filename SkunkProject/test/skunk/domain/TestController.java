@@ -8,7 +8,8 @@ public class TestController {
 
 	@Test
 	public void test_create_controller() {
-		fail();
+		Controller controller = new Controller();
+		assertEquals(controller.getClass(), Controller.class);
 	}
 
 }
