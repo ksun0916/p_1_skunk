@@ -14,6 +14,13 @@ public class TestRoll {
 
 	@Test
 	public void test_roll() {
+		Roll roll = new Roll();
+		int lastRoll = roll.getLastRoll();
+		for(int i=0;i<20;i++)
+		{
+			roll.roll();
+			if(roll.getLastRoll()!=lastRoll) return;
+		}
 		fail();
 	}
 }
