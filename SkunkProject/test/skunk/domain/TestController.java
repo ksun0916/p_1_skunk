@@ -79,6 +79,13 @@ public class TestController {
 	
 	@Test
 	public void test_get_turn_lost_chip() {
+		Controller controller = new Controller();
+		assertEquals(controller.getTurnLostChips(), 0);
+		for(int i=0;i<20;i++)
+		{
+			controller.playRoll();
+			if(controller.getTurnLostChips()!=0) return;
+		}
 		fail();
 	}
 }
