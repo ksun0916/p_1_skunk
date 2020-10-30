@@ -55,6 +55,9 @@ public class TestController {
 		assertEquals(controller.turnIsOver(), false);
 		controller.getPlayerAction("n");
 		assertEquals(controller.turnIsOver(), true);
+		controller.startNewTurn();
+		controller.getPlayerAction("");
+		assertEquals(controller.turnIsOver(), true);
 	}
 	
 	@Test
