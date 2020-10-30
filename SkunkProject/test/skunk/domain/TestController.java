@@ -101,7 +101,12 @@ public class TestController {
 		assertNotEquals(s, controller.printRoll());
 	}
 	
-	@Test void test_print_turn() {
-		fail();
+	@Test 
+	public void test_print_turn() {
+		Controller controller = new Controller();
+		String s = controller.printTurn();
+		controller.playRoll();
+		controller.printRoll();
+		assertNotEquals(s, controller.printTurn());
 	}
 }
