@@ -39,4 +39,9 @@ public class TestController {
 		controller.startNewTurn();
 		assertNotEquals(oldTurn, controller.getTurn());		
 	}
+	
+	@Test
+	public void test_turn_is_over() {
+		fail();
+	}
 }
