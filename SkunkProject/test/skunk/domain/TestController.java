@@ -67,6 +67,13 @@ public class TestController {
 	
 	@Test
 	public void test_play_roll() {
+		Controller controller = new Controller();
+		int lastRoll = controller.getRoll().getLastRoll();
+		for(int i=0;i<20;i++)
+		{
+			controller.playRoll();
+			if(controller.getRoll().getLastRoll()!=lastRoll) return;
+		}
 		fail();
 	}
 }
