@@ -22,6 +22,11 @@ public class TestTurn {
 
 	@Test
 	public void test_add_points() {
-		fail();
+		Turn turn = new Turn();
+		assertEquals(turn.getPoints(), 0);
+		turn.addPoints(7);
+		assertEquals(turn.getPoints(), 7);
+		turn.addPoints(15);
+		assertEquals(turn.getPoints(), 22);
 	}
 }
