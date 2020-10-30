@@ -44,6 +44,28 @@ public class TestRoll {
 	
 	@Test
 	public void test_check_skunk() {
-		fail();
+		Roll roll = new Roll();
+		assertEquals(roll.getSkunk(), 0);
+		for(int i=0;i<10;i++)
+		{
+			roll.roll();
+			roll.checkShunk();
+			if(roll.getLastDie1()==1 && roll.getLastDie2()==1)
+			{
+				assertEquals(roll.getSkunk(), 4);
+			}
+			else if(roll.getLastRoll()==3)
+			{
+				assertEquals(roll.getSkunk(), 2);
+			}
+			else if(roll.getLastDie1()==1 || roll.getLastDie2()==1)
+			{
+				assertEquals(roll.getSkunk(), 1);
+			}
+			else
+			{
+				assertEquals(roll.getSkunk(), 0);
+			}
+		}
 	}
 }
