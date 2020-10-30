@@ -44,6 +44,7 @@ public class SkunkApp {
 			StdOut.println("Roll Sequence" + controller.printTurn());
 			StdOut.println("Final Turn Scores: " + controller.getTurnPoint());
 			StdOut.println("Lost Chips: " + controller.getTurnLostChips());
+			//controller.updatePlayer(i);
 		}
 		
 		return;
