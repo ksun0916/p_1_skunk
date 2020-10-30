@@ -69,6 +69,10 @@ public class Controller {
 		return turn.getPoints();
 	}
 	
+	public Roll getRoll() {
+		return roll;
+	}
+	
 	public void playRoll() {
 		roll.roll();
 	}
