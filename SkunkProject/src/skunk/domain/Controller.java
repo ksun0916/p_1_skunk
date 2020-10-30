@@ -25,7 +25,7 @@ public class Controller {
 		return this.playerNumber;
 	}
 	
-	public ArrayList<Player> setPlayerList() {
+	private ArrayList<Player> setPlayerList() {
 		ArrayList<Player> players = new ArrayList<>();
 		for(int i=0;i<playerNumber;i++)
 		{
