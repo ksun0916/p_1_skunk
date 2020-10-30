@@ -59,6 +59,9 @@ public class TestController {
 	
 	@Test
 	public void test_get_turn_point() {
-		fail();
+		Controller controller = new Controller();
+		assertEquals(controller.getTurnPoint(), 0);
+		controller.getTurn().addPoints(8);
+		assertEquals(controller.getTurnPoint(), 8);
 	}
 }
