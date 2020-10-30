@@ -38,4 +38,9 @@ public class TestTurn {
 		turn.resetPoints();
 		assertEquals(turn.getPoints(), 0);
 	}
+	
+	@Test
+	public void test_add_rolls() {
+		fail();
+	}
 }
