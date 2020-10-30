@@ -46,5 +46,10 @@ public class TestController {
 		assertEquals(controller.turnIsOver(), false);
 		controller.getTurn().stopPlay();
 		assertEquals(controller.turnIsOver(), true);
-		}
+	}
+	
+	@Test
+	public void test_get_player_action() {
+		fail();
+	}
 }
