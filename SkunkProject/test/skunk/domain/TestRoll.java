@@ -21,7 +21,7 @@ public class TestRoll {
 			roll.roll();
 			if(roll.getLastRoll()!=lastRoll) return;
 		}
-		fail();
+		fail(); // Roll 20 times will get some different number than beginning
 	}
 	
 	@Test
@@ -32,6 +32,13 @@ public class TestRoll {
 	
 	@Test
 	public void test_get_skunk() {
-		fail();
+		Roll roll = new Roll();
+		assertEquals(roll.getSkunk(), 0);
+		for(int i=0;i<20;i++)
+		{
+			roll.roll();
+			if(roll.getSkunk()!=0) return;
+		}
+		fail(); // Roll 20 times will get at least one skunk
 	}
 }
