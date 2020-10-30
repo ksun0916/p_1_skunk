@@ -50,6 +50,10 @@ public class TestController {
 	
 	@Test
 	public void test_get_player_action() {
-		fail();
+		Controller controller = new Controller();
+		controller.getPlayerAction("y");
+		assertEquals(controller.turnIsOver(), false);
+		controller.getPlayerAction("n");
+		assertEquals(controller.turnIsOver(), true);
 	}
 }
