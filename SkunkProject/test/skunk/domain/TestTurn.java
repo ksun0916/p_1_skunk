@@ -41,6 +41,10 @@ public class TestTurn {
 	
 	@Test
 	public void test_add_rolls() {
-		fail();
+		Turn turn = new Turn();
+		assertEquals(turn.getRolls(), "");
+		turn.addRolls("5+3");
+		assertNotEquals(turn.getRolls(), " => 5+2");
+		assertEquals(turn.getRolls(), " => 5+3");
 	}
 }
