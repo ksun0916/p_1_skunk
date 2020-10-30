@@ -22,6 +22,12 @@ public class TestController {
 
 	@Test
 	public void test_set_player_name() {
-		fail();
+		Controller controller = new Controller();
+		controller.setPlayerName(0, "AAA");
+		assertEquals(controller.getPlayerName(0), "AAA");
+		assertNotEquals(controller.getPlayerName(1), "BBB");
+		controller.setPlayerName(1, "BBB");
+		assertEquals(controller.getPlayerName(0), "AAA");
+		assertEquals(controller.getPlayerName(1), "BBB");
 	}
 }
