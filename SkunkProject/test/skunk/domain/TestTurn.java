@@ -29,4 +29,9 @@ public class TestTurn {
 		turn.addPoints(15);
 		assertEquals(turn.getPoints(), 22);
 	}
+	
+	@Test
+	public void test_reset_points() {
+		fail();
+	}
 }
