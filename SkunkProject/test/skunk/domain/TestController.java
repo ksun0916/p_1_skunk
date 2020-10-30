@@ -100,4 +100,8 @@ public class TestController {
 		}
 		assertNotEquals(s, controller.printRoll());
 	}
+	
+	@Test void test_print_turn() {
+		fail();
+	}
 }
