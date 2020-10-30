@@ -76,4 +76,9 @@ public class TestController {
 		}
 		fail();
 	}
+	
+	@Test
+	public void test_get_turn_lost_chip() {
+		fail();
+	}
 }
