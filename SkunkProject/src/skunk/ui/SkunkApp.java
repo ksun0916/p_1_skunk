@@ -45,6 +45,7 @@ public class SkunkApp {
 			StdOut.println("Final Turn Scores: " + controller.getTurnPoint());
 			StdOut.println("Lost Chips: " + controller.getTurnLostChips());
 			//controller.updatePlayer(i);
+			
 		}
 		
 		return;
