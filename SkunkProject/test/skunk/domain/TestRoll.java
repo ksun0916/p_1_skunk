@@ -41,4 +41,9 @@ public class TestRoll {
 		}
 		fail(); // Roll 20 times will get at least one skunk
 	}
+	
+	@Test
+	public void test_check_skunk() {
+		fail();
+	}
 }
