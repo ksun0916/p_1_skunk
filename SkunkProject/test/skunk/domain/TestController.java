@@ -20,4 +20,8 @@ public class TestController {
 		assertEquals(controller.getPlayerNumber(), 3);
 	}
 
+	@Test
+	public void test_set_player_name() {
+		fail();
+	}
 }
