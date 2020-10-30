@@ -50,4 +50,10 @@ public class TestDice
 			dice.roll();
 		}
 	}
+	
+	@Test
+	public void test_get_last_die1() {
+		fail();
+	}
+	
 }
