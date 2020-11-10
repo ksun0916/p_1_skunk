@@ -147,7 +147,12 @@ public class TestController {
 	}
 	
 	@Test
-	public void test_get_kitty() {
-		fail();
+	public void test_update_player() {
+		Controller controller = new Controller();
+		assertEquals(controller.getPlayer(0).getPoint(), 0);
+		controller.getTurn().addPoints(30);
+		assertEquals(controller.getPlayer(0).getPoint(), 0);
+		controller.updatePlayer(0);
+		assertEquals(controller.getPlayer(0).getPoint(), 30);
 	}
 }

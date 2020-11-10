@@ -169,12 +169,7 @@ public class Controller {
 	{
 		return getPlayer(number).getPoint();
 	}
-	
-	public int getKitty()
-	{
-		return this.kitty;
-	}
-	
+
 	private void deductFiveChips(int number)
 	{
 		getPlayer(number).adjustChip(-FIVE);
