@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Controller {
 
+	private static final int FIVE = 5;
+	private static final int ONE_SKUNK = 1;
+	private static final int SKUNK_DEUCE = 2;
+	private static final int TWO_SKUNKS = 4;
+	
 	private int playerNumber;
 	private ArrayList<Player> playerList;
 	private Turn turn;
@@ -88,18 +93,10 @@ public class Controller {
 		}
 		else
 		{
-			if(status == 4)
-			{
-				s = s + "\nTwo Skunks! You lose 4 chip to the Kitty.";
-			}
-			else if(status == 2)
-			{
-				s = s + "\nSkunk and Deuce! You lose 2 chip to the Kitty.";
-			}
-			else if(status == 1)
-			{
-				s = s + "\nOne Skunk! You lose 1 chip to the Kitty.";
-			}
+			if(status == TWO_SKUNKS) s += "\nTwo Skunks! You lose 4 chip to the Kitty.";
+			else if(status == SKUNK_DEUCE) s += "\nSkunk and Deuce! You lose 2 chip to the Kitty.";
+			else if(status == ONE_SKUNK) s += "\nOne Skunk! You lose 1 chip to the Kitty.";
+			
 			turn.stopPlay();
 			turn.resetPoints();
 		}		
@@ -158,7 +155,7 @@ public class Controller {
 		Player player = getPlayer(number);
 		int status = roll.getSkunk();
 		
-		if(status == 4) player.resetPoint();
+		if(status == TWO_SKUNKS) player.resetPoint();
 		else player.addPoint(getTurnPoint());
 		
 		player.adjustChip(-status);
@@ -178,6 +175,12 @@ public class Controller {
 		return this.kitty;
 	}
 	
+	private void deductFiveChips(int number)
+	{
+		getPlayer(number).adjustChip(-FIVE);
+		this.kitty += FIVE;
+	}
+	
 	public String printGameResult()
 	{
 		int winner = 0;
@@ -195,12 +198,10 @@ public class Controller {
 		{
 			if(i!=winner)
 			{
-				getPlayer(i).adjustChip(-5);
-				this.kitty += 5;
+				deductFiveChips(i);
 				if(getPlayerScore(i)==0)
 				{
-					getPlayer(i).adjustChip(-5);
-					this.kitty += 5;
+					deductFiveChips(i);
 				}
 			}
 		}		

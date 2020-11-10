@@ -2,6 +2,11 @@ package skunk.domain;
 
 public class Roll {
 	
+	private static final int SKUNK_DIE = 1;
+	private static final int ONE_SKUNK = 1;
+	private static final int SKUNK_DEUCE = 2;
+	private static final int TWO_SKUNKS = 4;
+	
 	private Dice dice;
 	int skunk;
 	
@@ -36,17 +41,17 @@ public class Roll {
 	}
 	
 	public void checkShunk() {
-		if(getLastDie1()==1 && getLastDie2()==1)
+		if(getLastDie1()==SKUNK_DIE && getLastDie2()==SKUNK_DIE)
 		{
-			this.skunk = 4;
+			this.skunk = TWO_SKUNKS;
 		}
 		else if(getLastRoll()==3)
 		{
-			this.skunk = 2;
+			this.skunk = SKUNK_DEUCE;
 		}
-		else if(getLastDie1()==1 || getLastDie2()==1)
+		else if(getLastDie1()==SKUNK_DIE || getLastDie2()==SKUNK_DIE)
 		{
-			this.skunk = 1;
+			this.skunk = ONE_SKUNK;
 		}
 		else
 		{
