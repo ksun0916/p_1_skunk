@@ -169,6 +169,14 @@ public class TestController {
 	
 	@Test
 	public void test_print_game_result_case2() {
-		fail();
+		Controller controller = new Controller();
+		controller.setPlayerName(0, "AA");
+		controller.setPlayerName(1, "BB");
+		controller.getPlayer(0).addPoint(100);
+		controller.getPlayer(1).addPoint(70);
+		assertEquals(controller.printGameResult(), "Winner is AA!\n\nFinal Scoreboard: \n"
+				+"Player Name: AA	Final Scores: 100	Total Chips: 55\n"
+				+"Player Name: BB	Final Scores: 70	Total Chips: 45\n");
+	
 	}
 }
