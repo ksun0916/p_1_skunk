@@ -177,6 +177,5 @@ public class TestController {
 		assertEquals(controller.printGameResult(), "Winner is AA!\n\nFinal Scoreboard: \n"
 				+"Player Name: AA	Final Scores: 100	Total Chips: 55\n"
 				+"Player Name: BB	Final Scores: 70	Total Chips: 45\n");
-	
 	}
 }
