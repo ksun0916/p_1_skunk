@@ -70,6 +70,14 @@ public class TestPlayer {
 	
 	@Test
 	public void test_check_player_reach_a_hundred() {
-		fail();
+		Player player = new Player();
+		assertEquals(player.getReachAHundred(), false);
+		player.addPoint(99);
+		player.checkPlayerReachAHundred();
+		assertEquals(player.getReachAHundred(), false);
+		player.addPoint(1);
+		player.checkPlayerReachAHundred();
+		assertEquals(player.getReachAHundred(), true);
+		
 	}
 }
