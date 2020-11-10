@@ -155,4 +155,9 @@ public class TestController {
 		controller.updatePlayer(0);
 		assertEquals(controller.getPlayer(0).getPoint(), 30);
 	}
+	
+	@Test
+	public void test_print_game_result() {
+		fail();
+	}
 }
