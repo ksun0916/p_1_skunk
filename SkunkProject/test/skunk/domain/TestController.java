@@ -133,4 +133,9 @@ public class TestController {
 		assertEquals(controller.reachAHundred(0), false);
 		assertEquals(controller.reachAHundred(1), true);
 	}
+	
+	@Test
+	public void test_get_player_score() {
+		fail();
+	}
 }
