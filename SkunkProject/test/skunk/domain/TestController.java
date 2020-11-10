@@ -145,4 +145,9 @@ public class TestController {
 		controller.getPlayer(0).resetPoint();
 		assertEquals(controller.getPlayerScore(0), 0);
 	}
+	
+	@Test
+	public void test_get_kitty() {
+		fail();
+	}
 }
