@@ -158,6 +158,17 @@ public class TestController {
 	
 	@Test
 	public void test_print_game_result() {
-		fail();
+		Controller controller = new Controller();
+		controller.setPlayerName(0, "AAA");
+		controller.setPlayerName(1, "BBB");
+		controller.getPlayer(1).addPoint(101);
+		assertEquals(controller.printGameResult(), "Winner is BBB!\n\nFinal Scoreboard: \n"
+				+"Player Name: AAA	Final Scores: 0	Total Chips: 40\n"
+				+"Player Name: BBB	Final Scores: 101	Total Chips: 60\n");
+		
+		controller.getPlayer(0).addPoint(50);
+		assertEquals(controller.printGameResult(), "Winner is BBB!\n\nFinal Scoreboard: \n"
+				+"Player Name: AAA	Final Scores: 50	Total Chips: 35\n"
+				+"Player Name: BBB	Final Scores: 101	Total Chips: 65\n");
 	}
 }
