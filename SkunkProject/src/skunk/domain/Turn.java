@@ -6,7 +6,6 @@ public class Turn {
 	private boolean keepPlay;
 	private String rolls;
 	
-	
 	public Turn() {
 		keepPlay = true;
 		points = 0;
