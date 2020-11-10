@@ -5,12 +5,14 @@ public class Player {
 	private int point;
 	private int chip;
 	private String name;
+	private boolean reachAHundred;
 	
 	public Player()
 	{
 		this.chip = 50;
 		this.point = 0;
 		this.name = "Player";
+		this.reachAHundred = false;
 	}
 	
 	public void setChip(int chip)
@@ -56,5 +58,15 @@ public class Player {
 	public String toString() 
 	{
 		return "Player: " + getName() + "\nCurrent Points: " + getPoint() + "\nTotal Chips: "  + getChip();
+	}
+	
+	public boolean getReachAHundred()
+	{
+		return this.reachAHundred;
+	}
+	
+	public void checkPlayerReachAHundred()
+	{
+		if(this.getPoint() >= 100) this.reachAHundred = true;
 	}
 }

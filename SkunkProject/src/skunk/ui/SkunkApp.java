@@ -6,49 +6,70 @@ public class SkunkApp {
 
 	public static void main(String[] args) {
 		
-		StdOut.println("Welcome to play skunk!");
-		
 		Controller controller = new Controller();
-		//StdOut.println("Please enter player numbers: ");
-		controller.setPlayerNumber(1);
+		
+		StdOut.println("Welcome to play skunk!");		
+		StdOut.print("Please enter player numbers: ");
+		controller.setPlayerNumber(StdIn.readLine());
 		for(int i=0;i<controller.getPlayerNumber();i++) 
 		{
 			StdOut.println("Please enter Player" + (i+1) + "'s Name: ");
 			controller.setPlayerName(i, StdIn.readLine());
 		}
 		
-		// Game game = new Game();
-		// while(!game.isLastTurn())
+		StdOut.println("Do you need to view the complete rules?  y/n ");
+		StdOut.println(controller.displayRules(StdIn.readLine()));
+		StdOut.println("Game Start!");
 		
-		for(int i=0;i<controller.getPlayerNumber();i++) 
+		outerloop:
+		while(true)
 		{
-			controller.startNewTurn();
-			StdOut.println(controller.getPlayerName(i) + "'s turn has started.");
-			
-			while(!controller.turnIsOver())
+			for(int i=0;i<controller.getPlayerNumber();i++) 
 			{
-				StdOut.println("\nDo you want to roll? y/n ");
-				controller.getPlayerAction(StdIn.readLine());
+				// If someone reach a hundred at last round, then game is over
+				if(controller.reachAHundred(i)) break outerloop;
+							
+				controller.startNewTurn();
 				
-				if(!controller.turnIsOver())
+				StdOut.println();
+				StdOut.println(controller.getPlayerName(i) + "'s turn has started.");
+				
+				while(!controller.turnIsOver())
 				{
-					controller.playRoll();
-					StdOut.println("\nRoll Outcome Report: ");
-					StdOut.println(controller.getPlayerName(i) + " got " + controller.printRoll());
-					StdOut.println("Current turn score is: " + controller.getTurnPoint());
+					StdOut.println("\nDo you want to roll? y/n ");
+					controller.getPlayerAction(StdIn.readLine());
+					
+					if(!controller.turnIsOver())
+					{
+						controller.playRoll();
+						StdOut.println("\nRoll Outcome Report: ");
+						StdOut.println(controller.getPlayerName(i) + " got " + controller.printRoll());
+						StdOut.println("Current turn score is: " + controller.getTurnPoint());
+					}
 				}
+				
+				controller.updatePlayer(i);
+				
+				printDivider();
+				StdOut.println("End Of Turn Summary: ");
+				StdOut.println("Player Name: " + controller.getPlayerName(i));
+				StdOut.println("Roll Sequence" + controller.printTurn());
+				StdOut.println("Final Turn Scores: " + controller.getTurnPoint());
+				StdOut.println("Total Game Scores: " + controller.getPlayerScore(i));
+				StdOut.println("Lost Chips: " + controller.getTurnLostChips());	
+				printDivider();
 			}
-			
-			StdOut.println("\nEnd Of Turn Summary: ");
-			StdOut.println("Player Name: " + controller.getPlayerName(i));
-			StdOut.println("Roll Sequence" + controller.printTurn());
-			StdOut.println("Final Turn Scores: " + controller.getTurnPoint());
-			StdOut.println("Lost Chips: " + controller.getTurnLostChips());
-			//controller.updatePlayer(i);
-			
 		}
 		
+		printDivider();
+		StdOut.println("Game is Over!");
+		StdOut.println(controller.printGameResult());
+		printDivider();
 		return;
 	}
-
+	
+	public static void printDivider()
+	{
+		StdOut.println("-------------------------");
+	}
 }

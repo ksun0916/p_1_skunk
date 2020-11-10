@@ -16,7 +16,7 @@ public class TestController {
 	public void test_set_player_number() {
 		Controller controller = new Controller();
 		assertEquals(controller.getPlayerNumber(), 2);
-		controller.setPlayerNumber(3);
+		controller.setPlayerNumber("3");
 		assertEquals(controller.getPlayerNumber(), 3);
 	}
 
