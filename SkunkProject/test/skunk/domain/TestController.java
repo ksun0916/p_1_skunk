@@ -115,7 +115,10 @@ public class TestController {
 	
 	@Test
 	public void test_display_rules() {
-		fail();
+		Controller controller = new Controller();
+		assertEquals(controller.displayRules("n"), "");
+		assertEquals(controller.displayRules(" "), "");
+		assertNotEquals(controller.displayRules("y"), "");
 	}
 	
 }
