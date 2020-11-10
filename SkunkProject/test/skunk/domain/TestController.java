@@ -166,4 +166,9 @@ public class TestController {
 				+"Player Name: AAA	Final Scores: 0	Total Chips: 40\n"
 				+"Player Name: BBB	Final Scores: 101	Total Chips: 60\n");
 	}
+	
+	@Test
+	public void test_print_game_result_case2() {
+		fail();
+	}
 }
