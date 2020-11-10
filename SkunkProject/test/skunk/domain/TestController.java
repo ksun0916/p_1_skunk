@@ -123,6 +123,14 @@ public class TestController {
 	
 	@Test
 	public void test_reach_a_hundred() {
-		fail();
+		Controller controller = new Controller();
+		assertEquals(controller.reachAHundred(0), false);
+		assertEquals(controller.reachAHundred(1), false);
+		controller.getPlayer(0).addPoint(99);
+		controller.getPlayer(1).addPoint(101);
+		controller.getPlayer(0).checkPlayerReachAHundred();
+		controller.getPlayer(1).checkPlayerReachAHundred();
+		assertEquals(controller.reachAHundred(0), false);
+		assertEquals(controller.reachAHundred(1), true);
 	}
 }

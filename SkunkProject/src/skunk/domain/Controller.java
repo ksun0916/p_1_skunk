@@ -41,7 +41,7 @@ public class Controller {
 		return players;
 	}
 	
-	private Player getPlayer(int number) {
+	public Player getPlayer(int number) {
 		return playerList.get(number);
 	}
 	
