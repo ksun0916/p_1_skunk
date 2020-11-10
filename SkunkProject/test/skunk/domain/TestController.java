@@ -112,4 +112,10 @@ public class TestController {
 		controller.printRoll();
 		assertNotEquals(s, controller.printTurn());
 	}
+	
+	@Test
+	public void test_display_rules() {
+		fail();
+	}
+	
 }
