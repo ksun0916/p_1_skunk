@@ -67,4 +67,9 @@ public class TestPlayer {
 		player.addPoint(25);
 		assertEquals(player.toString(), "Player: ABCD"+"\nCurrent Points: 25"+"\nTotal Chips: 100");
 	}
+	
+	@Test
+	public void test_check_player_reach_a_hundred() {
+		fail();
+	}
 }
