@@ -121,4 +121,8 @@ public class TestController {
 		assertNotEquals(controller.displayRules("y"), "");
 	}
 	
+	@Test
+	public void test_reach_a_hundred() {
+		fail();
+	}
 }
