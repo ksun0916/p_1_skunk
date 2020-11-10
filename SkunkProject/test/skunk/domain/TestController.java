@@ -136,6 +136,13 @@ public class TestController {
 	
 	@Test
 	public void test_get_player_score() {
-		fail();
+		Controller controller = new Controller();
+		assertEquals(controller.getPlayerScore(0), 0);
+		controller.getPlayer(0).addPoint(30);
+		assertEquals(controller.getPlayerScore(0), 30);
+		controller.getPlayer(0).addPoint(13);
+		assertEquals(controller.getPlayerScore(0), 43);
+		controller.getPlayer(0).resetPoint();
+		assertEquals(controller.getPlayerScore(0), 0);
 	}
 }
