@@ -6,6 +6,7 @@ public class Player {
 	private int chip;
 	private String name;
 	private boolean reachAHundred;
+	private int mode;
 	
 	public Player()
 	{
@@ -13,6 +14,7 @@ public class Player {
 		this.point = 0;
 		this.name = "Player";
 		this.reachAHundred = false;
+		this.mode = 0;
 	}
 	
 	public void setChip(int chip)
@@ -68,5 +70,15 @@ public class Player {
 	public void checkPlayerReachAHundred()
 	{
 		if(this.getPoint() >= 100) this.reachAHundred = true;
+	}
+	
+	public void setMode(int m)
+	{
+		this.mode = m;
+	}
+	
+	public int getMode()
+	{
+		return this.mode;
 	}
 }

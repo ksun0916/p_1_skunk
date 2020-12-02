@@ -17,6 +17,17 @@ public class SkunkApp {
 			controller.setPlayerName(i, StdIn.readLine());
 		}
 		
+		while(true)
+		{
+			StdOut.println("\nDo you need to add one more computer player?  y/n ");
+			if(!controller.addComputerPlayer(StdIn.readLine()))
+			{
+				break;
+			}
+			StdOut.println("Do you want to set this computer player with smart mode or random mode? s/r (s for smart mode/r for random mode)");
+			controller.setComputerPlayer(StdIn.readLine());
+		}
+		
 		StdOut.println("Do you need to view the complete rules?  y/n ");
 		StdOut.println(controller.displayRules(StdIn.readLine()));
 		StdOut.println("Game Start!");
@@ -36,8 +47,15 @@ public class SkunkApp {
 				
 				while(!controller.turnIsOver())
 				{
-					StdOut.println("\nDo you want to roll? y/n ");
-					controller.getPlayerAction(StdIn.readLine());
+					if(controller.isComputerPlayer(i))
+					{
+						controller.getComputerPlayerAction(i);
+					}
+					else
+					{
+						StdOut.println("\nDo you want to roll? y/n ");
+						controller.getPlayerAction(StdIn.readLine());
+					}
 					
 					if(!controller.turnIsOver())
 					{

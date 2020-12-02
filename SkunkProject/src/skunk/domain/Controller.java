@@ -2,8 +2,11 @@ package skunk.domain;
 
 import java.util.ArrayList;
 
+import edu.princeton.cs.introcs.StdOut;
+
 public class Controller {
 
+	private static final int RANDOM_KEEP_PLAY_RATE = 50;
 	private static final int FIVE = 5;
 	private static final int ONE_SKUNK = 1;
 	private static final int SKUNK_DEUCE = 2;
@@ -182,7 +185,7 @@ public class Controller {
 		int winnerScore = 0;
 		for(int i=0;i<getPlayerNumber();i++) 
 		{
-			if(getPlayer(i).getPoint() > winnerScore)
+			if(getPlayer(i).getPoint() > winnerScore || (getPlayer(i).getPoint() == winnerScore && getPlayer(i).getReachAHundred()))
 			{
 				winnerScore = this.getPlayer(i).getPoint();
 				winner = i;
@@ -211,5 +214,82 @@ public class Controller {
 		}
 		
 		return result;
+	}
+	
+	public boolean addComputerPlayer(String s)
+	{
+		if(s.length()==0 || s.charAt(0) != 'y')
+		{
+			return false;
+		}		
+		this.playerNumber++;
+		this.playerList.add(new Player());
+		return true;
+	}
+	
+	public void setComputerPlayer(String s)
+	{
+		if(s.length()==0 || s.charAt(0) != 's')
+		{
+			// Random computer player (mode 1)
+			getPlayer(playerNumber-1).setName("Player "+ playerNumber +" (Random AI)");
+			getPlayer(playerNumber-1).setMode(1);
+		}
+		else
+		{
+			// Smart computer player (mode 2)
+			getPlayer(playerNumber-1).setName("Player "+ playerNumber +" (Smart AI)");
+			getPlayer(playerNumber-1).setMode(2);
+		}
+	}
+	
+	public boolean isComputerPlayer(int number)
+	{
+		if(getPlayer(number).getMode()==0) return false;
+		return true;
+	}
+	
+	public void getComputerPlayerAction(int number)
+	{
+		if(getPlayer(number).getMode()==1)
+		{
+			if(getTurnPoint() != 0 && (Math.random() * 100 + 1) > RANDOM_KEEP_PLAY_RATE) turn.stopPlay();
+		}
+		else
+		{
+			int turnPoint = getTurnPoint();
+			int gamePoint = getPlayerScore(number);
+			double expectPoint = 0
+					+ 1.0 / 36 * 0
+		            + 2.0 / 36 * gamePoint
+		            + 8.0 / 36 * gamePoint
+		            + 1.0 / 36 * (gamePoint + turnPoint + 4)
+		            + 2.0 / 36 * (gamePoint + turnPoint + 5)
+		            + 3.0 / 36 * (gamePoint + turnPoint + 6)
+		            + 4.0 / 36 * (gamePoint + turnPoint + 7)
+		            + 5.0 / 36 * (gamePoint + turnPoint + 8)
+		            + 4.0 / 36 * (gamePoint + turnPoint + 9)
+		            + 3.0 / 36 * (gamePoint + turnPoint + 10)
+		            + 2.0 / 36 * (gamePoint + turnPoint + 11)
+		            + 1.0 / 36 * (gamePoint + turnPoint + 12);
+			StdOut.println("Turn: "+turnPoint+" Game: "+ gamePoint + " EP: "+ expectPoint);
+			if(expectPoint <= turnPoint + gamePoint) turn.stopPlay();
+		}
+	}
+	
+	// This is for AutoPlayApp
+	public int getWinner()
+	{
+		int winner = 0;
+		int winnerScore = 0;
+		for(int i=0;i<getPlayerNumber();i++) 
+		{
+			if(getPlayer(i).getPoint() > winnerScore || (getPlayer(i).getPoint() == winnerScore && getPlayer(i).getReachAHundred()))
+			{
+				winnerScore = this.getPlayer(i).getPoint();
+				winner = i;
+			}
+		}
+		return winner;
 	}
 }
