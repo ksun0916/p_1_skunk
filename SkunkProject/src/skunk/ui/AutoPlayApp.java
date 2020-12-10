@@ -7,6 +7,7 @@ public class AutoPlayApp {
 	public static void main(String[] args) {
 		int totalGames = 1000;
 		int smartWin = 0;
+		int randomWin = 0;
 		for(int time=0;time<totalGames;time++)
 		{
 			Controller controller = new Controller();
@@ -14,11 +15,12 @@ public class AutoPlayApp {
 			StdOut.println("Welcome to play skunk!");		
 			StdOut.print("Please enter player numbers: ");
 			controller.setPlayerNumber("0");
-			for(int i=0;i<controller.getPlayerNumber();i++) 
-			{
-				StdOut.println("Please enter Player" + (i+1) + "'s Name: ");
-				controller.setPlayerName(i, StdIn.readLine());
-			}
+			
+//			for(int i=0;i<controller.getPlayerNumber();i++) 
+//			{
+//				StdOut.println("Please enter Player" + (i+1) + "'s Name: ");
+//				controller.setPlayerName(i, StdIn.readLine());
+//			}
 			
 			{
 				StdOut.println("\nDo you need to add one more computer player?  y/n ");
@@ -39,8 +41,9 @@ public class AutoPlayApp {
 				controller.setComputerPlayer("s");
 			}
 			
-			StdOut.println("Do you need to view the complete rules?  y/n ");
-			StdOut.println(controller.displayRules("n"));
+//			StdOut.println("Do you need to view the complete rules?  y/n ");
+//			StdOut.println(controller.displayRules("n"));
+			
 			StdOut.println("Game Start!");
 			
 			outerloop:
@@ -96,10 +99,12 @@ public class AutoPlayApp {
 			printDivider();
 			
 			if(controller.getWinner()==1) smartWin++;
+			else randomWin++;
 		}
 		
 		StdOut.println();
 		StdOut.println("Smart AI win " + smartWin + " times in " + totalGames + " games.");
+		StdOut.println("Random AI win " + randomWin + " times in " + totalGames + " games.");
 		return;
 	}
 	

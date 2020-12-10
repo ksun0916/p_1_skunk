@@ -80,4 +80,14 @@ public class TestPlayer {
 		assertEquals(player.getReachAHundred(), true);
 		
 	}
+	
+	@Test
+	public void test_mode() {
+		Player player = new Player();
+		assertEquals(player.getMode(), 0);
+		player.setMode(1);
+		assertEquals(player.getMode(), 1);
+		player.setMode(2);
+		assertEquals(player.getMode(), 2);		
+	}
 }

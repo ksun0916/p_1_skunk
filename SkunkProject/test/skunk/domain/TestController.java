@@ -117,7 +117,7 @@ public class TestController {
 	public void test_display_rules() {
 		Controller controller = new Controller();
 		assertEquals(controller.displayRules("n"), "");
-		assertEquals(controller.displayRules(" "), "");
+		assertEquals(controller.displayRules(""), "");
 		assertNotEquals(controller.displayRules("y"), "");
 	}
 	
@@ -177,5 +177,70 @@ public class TestController {
 		assertEquals(controller.printGameResult(), "Winner is AA!\n\nFinal Scoreboard: \n"
 				+"Player Name: AA	Final Scores: 100	Total Chips: 55\n"
 				+"Player Name: BB	Final Scores: 70	Total Chips: 45\n");
+	}
+	
+	@Test
+	public void test_add_computer_player() {
+		Controller controller = new Controller();
+		assertEquals(controller.addComputerPlayer(""), false);
+		assertEquals(controller.addComputerPlayer("n"), false);
+		assertEquals(controller.getPlayerNumber(), 2);
+		assertEquals(controller.addComputerPlayer("y"), true);
+		assertEquals(controller.getPlayerNumber(), 3);
+	}
+	
+	@Test
+	public void test_set_computer_player() {
+		Controller controller = new Controller();
+		assertEquals(controller.getPlayer(1).getMode(), 0);	
+		controller.setComputerPlayer("");
+		assertEquals(controller.getPlayer(1).getMode(), 1);	
+		controller.setComputerPlayer("s");
+		assertEquals(controller.getPlayer(1).getMode(), 2);	
+		controller.setComputerPlayer("r");
+		assertEquals(controller.getPlayer(1).getMode(), 1);		
+	}
+	
+	@Test
+	public void test_is_computer_player() {
+		Controller controller = new Controller();
+		assertEquals(controller.isComputerPlayer(1), false);	
+		controller.setComputerPlayer("s");
+		assertEquals(controller.isComputerPlayer(1), true);
+		controller.setComputerPlayer("r");
+		assertEquals(controller.isComputerPlayer(1), true);	
+	}
+	
+	@Test 
+	public void test_get_winner() {
+		Controller controller = new Controller();
+		controller.getPlayer(1).addPoint(100);
+		assertEquals(controller.getWinner(), 1);
+		controller.getPlayer(0).addPoint(110);
+		assertEquals(controller.getWinner(), 0);
+	}
+	
+	@Test
+	public void test_get_computer_player_action_smart() {
+		Controller controller = new Controller();
+		controller.setComputerPlayer("s");
+		controller.getComputerPlayerAction(1);
+		assertEquals(controller.getTurn().isOver(), false);
+		controller.getTurn().addPoints(50);
+		controller.getComputerPlayerAction(1);
+		assertEquals(controller.getTurn().isOver(), true);
+	}
+	
+	@Test
+	public void test_get_computer_player_action_random() {
+		Controller controller = new Controller();
+		controller.setComputerPlayer("r");
+		controller.getComputerPlayerAction(1);
+		assertEquals(controller.getTurn().isOver(), false);
+		controller.getTurn().addPoints(50);
+		while(!controller.getTurn().isOver())
+		{
+			controller.getComputerPlayerAction(1);
+		}		
 	}
 }

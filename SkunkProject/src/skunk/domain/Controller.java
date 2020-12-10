@@ -253,7 +253,8 @@ public class Controller {
 	{
 		if(getPlayer(number).getMode()==1)
 		{
-			if(getTurnPoint() != 0 && (Math.random() * 100 + 1) > RANDOM_KEEP_PLAY_RATE) turn.stopPlay();
+			if(getTurnPoint() != 0 && (Math.random() * 100 + 1) > RANDOM_KEEP_PLAY_RATE) 
+				turn.stopPlay();
 		}
 		else
 		{
@@ -272,7 +273,7 @@ public class Controller {
 		            + 3.0 / 36 * (gamePoint + turnPoint + 10)
 		            + 2.0 / 36 * (gamePoint + turnPoint + 11)
 		            + 1.0 / 36 * (gamePoint + turnPoint + 12);
-			StdOut.println("Turn: "+turnPoint+" Game: "+ gamePoint + " EP: "+ expectPoint);
+			//StdOut.println("Turn: "+turnPoint+" Game: "+ gamePoint + " EP: "+ expectPoint);
 			if(expectPoint <= turnPoint + gamePoint) turn.stopPlay();
 		}
 	}
