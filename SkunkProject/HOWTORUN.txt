@@ -2,7 +2,7 @@ To Setup Skunk Game
 1. Open and run SkunkApp.java (SkunkProject/src/skunk/ui/SkunkApp.java)
 2. Enter human player numbers (If you want to see computer player vs computer player, enter 0 here)
 3. Enter every human players' name
-4.1 If you want to add a computer player, enter "y"; otherwise, enter "n"
+4.1 If you want to add a computer player, enter "y"; otherwise, enter "n" and jump to step 6
 4.2 If you want to add a smart mode computer player, enter "s"; if you want to add a random mode computer player, enter "r"
 5. If you want to add more computer player, repeat 4.1 and 4.2
 6. If you want to view the complete rules, enter "y"; otherwise, enter "n"
